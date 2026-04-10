@@ -60,19 +60,22 @@ public class Team {
         this.members = members;
     }
 
-    /**
+      /**
      * Check if a team is equal to another object
      * @param obj object to compare to
      * @return true if the object is a team with the same name and members
      */
     @Override
     public boolean equals(Object obj) {
+        // Case 1: these are the same object
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof Team)) {
+        // Case 2: the other object isn't even an instance of this class
+        if (!(obj instanceof Team)) { 
             return false;
         }
+        // Case 3: Cast the other object to this class, and compare all of the fields 
         Team other = (Team) obj;
         return this.name.equals(other.name) && this.members.equals(other.members);
     }
