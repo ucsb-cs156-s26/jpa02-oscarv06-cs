@@ -71,7 +71,16 @@ public class TeamTest {
         assertEquals(expected2, t2.hashCode());
     }
     
+    @Test
+    public void equals_same_name_different_members() {
+        Team team1 = new Team("test-team");
+        team1.addMember("Alice");
+        Team team2 = new Team("test-team");
+        team2.addMember("Bob");
+        
+        assert(!team1.equals(team2));
+    }
     // TODO: Add additional tests as needed to get to 100% jacoco line coverage, and
     // 100% mutation coverage (all mutants timed out or killed)
-    
+
 }
